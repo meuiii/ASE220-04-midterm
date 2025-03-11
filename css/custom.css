@@ -1,0 +1,99 @@
+/* custom.css */
+
+/* Global Styles */
+body {
+  background-color: #fff0f5;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container Spacing */
+.container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #d63384; /* A gentle, soft pink hue */
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Links */
+a {
+  color: #d63384;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #e91e63;
+}
+
+/* Table Styling */
+.table {
+  background-color: #fffafa; /* Very light pink */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #ffeef8; /* Subtle light pink for alternating rows */
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #d63384;
+  border-color: #d63384;
+}
+
+.btn-success {
+  background-color: #e91e63;
+  border-color: #e91e63;
+}
+
+.btn-warning {
+  background-color: #ffb6c1;
+  border-color: #ffb6c1;
+  color: #333;
+}
+
+.btn-danger {
+  background-color: #ff6b81;
+  border-color: #ff6b81;
+}
+
+/* Card Components */
+.card {
+  border: 1px solid #ffd1dc;
+  border-radius: 8px;
+}
+
+.card-header {
+  background-color: #ffeef8;
+  color: #d63384;
+  font-weight: bold;
+}
+
+/* Form Controls */
+.form-control {
+  border-radius: 4px;
+  border: 1px solid #ffc0cb;
+}
+
+.form-control:focus {
+  border-color: #d63384;
+  box-shadow: 0 0 5px rgba(214, 51, 132, 0.5);
+}
+
+.form-control-file {
+  margin-top: 10px;
+}
+
+/* Footer (if needed) */
+footer {
+  background-color: #fff0f5;
+  padding: 10px 0;
+  text-align: center;
+  color: #d63384;
+}

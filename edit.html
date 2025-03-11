@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Listing</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="my-4">Edit Listing</h1>
+    <form id="editProductForm" action="update_product.php" method="post">
+      <input type="hidden" name="id" value="1">
+      
+      <div class="form-group">
+        <label for="productName">Name</label>
+        <input type="text" class="form-control" id="productName" name="name" value="Product One">
+      </div>
+      
+      <div class="form-group">
+        <label for="productPrice">Price</label>
+        <input type="text" class="form-control" id="productPrice" name="price" value="$19.99">
+      </div>
+      
+      <div class="form-group">
+        <label for="productDesc">Description</label>
+        <textarea class="form-control" id="productDesc" name="description" rows="3">This is a detailed description of Product One.</textarea>
+      </div>
+      
+      <div class="form-group">
+        <label>Current Product Image:</label>
+        <div>
+          <img id="currentImage" src="images/example1.jpg" alt="Current Product Image" class="img-thumbnail" style="max-width:150px;">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="productImage">Upload or Change Product Image</label>
+        <input type="file" class="form-control-file" id="productImage" name="image" accept="image/*">
+      </div>
+      
+      <div class="form-group">
+        <label>New Image Preview:</label>
+        <div>
+          <img id="newImagePreview" src="#" alt="New Image Preview" class="img-thumbnail" style="display:none; max-width:150px;">
+        </div>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Update Listing</button>
+    </form>
+    <a href="detail.html?id=1" class="btn btn-secondary mt-3">Back to Details</a>
+  </div>
+  
+  <script>
+    document.getElementById('productImage').addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      const preview = document.getElementById('newImagePreview');
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          preview.src = e.target.result;
+          preview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      } else {
+        preview.src = '#';
+        preview.style.display = 'none';
+      }
+    });
+  </script>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
